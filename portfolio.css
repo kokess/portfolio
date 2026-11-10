@@ -178,23 +178,20 @@ a:hover {
 
 .hero-grid {
     display: grid;
-    gap: 2rem;
+    gap: 2.5rem;
     align-items: center;
 }
 
+/* ---------- Profile Image / Avatar Styling (Larger Size) ---------- */
 .avatar {
-    width: 160px;
-    height: 160px;
+    width: 220px;
+    height: 220px;
     border-radius: 50%;
-    display: grid;
-    place-items: center;
-    background: var(--accent);
-    color: #fff;
-    font-family: var(--font-head);
-    font-size: 2.6rem;
-    font-weight: 700;
+    object-fit: cover;
+    display: block;
     border: 6px solid var(--highlight);
-    justify-self: start;
+    box-shadow: 0 10px 25px rgba(18, 38, 58, 0.12);
+    justify-self: center;
 }
 
 /* ---------- Buttons ---------- */
@@ -379,12 +376,12 @@ textarea[aria-invalid="true"] {
     }
 
     .hero-grid {
-        grid-template-columns: 1fr 220px;
+        grid-template-columns: 1fr 300px;
     }
 
     .avatar {
-        width: 200px;
-        height: 200px;
+        width: 280px;
+        height: 280px;
         justify-self: end;
     }
 }
