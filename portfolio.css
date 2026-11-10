@@ -1,0 +1,390 @@
+/* ---------- Design tokens ---------- */
+:root {
+    --bg: #f5f8fa;
+    --surface: #ffffff;
+    --ink: #12263a;
+    --muted: #55677a;
+    --line: #d8e1e8;
+    --accent: #0b7a85;
+    --accent-dark: #075b64;
+    --highlight: #f2b544;
+    --radius: 10px;
+    --font-head: "Sora", system-ui, sans-serif;
+    --font-body: "Nunito Sans", system-ui, sans-serif;
+}
+
+/* ---------- Base ---------- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 1.0625rem;
+    line-height: 1.65;
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--font-head);
+    line-height: 1.2;
+    margin: 0 0 0.75rem;
+}
+
+h1 {
+    font-size: clamp(2rem, 5vw, 3.25rem);
+    letter-spacing: -0.02em;
+}
+
+h2 {
+    font-size: clamp(1.4rem, 3vw, 1.9rem);
+}
+
+h3 {
+    font-size: 1.15rem;
+}
+
+p {
+    margin: 0 0 1rem;
+    max-width: 65ch;
+}
+
+a {
+    color: var(--accent-dark);
+}
+
+a:hover {
+    color: var(--accent);
+}
+
+:focus-visible {
+    outline: 3px solid var(--highlight);
+    outline-offset: 2px;
+}
+
+.container {
+    width: min(1100px, 92%);
+    margin-inline: auto;
+}
+
+.narrow {
+    width: min(720px, 92%);
+}
+
+.skip-link {
+    position: absolute;
+    left: -999px;
+    top: 0;
+    background: var(--ink);
+    color: #fff;
+    padding: 0.5rem 1rem;
+}
+
+.skip-link:focus {
+    left: 0;
+    z-index: 20;
+}
+
+/* ---------- Header and navigation ---------- */
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: var(--surface);
+    border-bottom: 1px solid var(--line);
+}
+
+.bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding: 0.75rem 0;
+}
+
+.brand {
+    font-family: var(--font-head);
+    font-weight: 700;
+    color: var(--ink);
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+#site-nav {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+#site-nav.open {
+    display: flex;
+}
+
+#site-nav a {
+    padding: 0.5rem 0.75rem;
+    border-radius: 6px;
+    color: var(--ink);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+#site-nav a:hover {
+    background: var(--bg);
+}
+
+#site-nav a[aria-current="page"] {
+    background: var(--ink);
+    color: #fff;
+}
+
+.nav-toggle {
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    background: transparent;
+    color: var(--ink);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 0.4rem 0.9rem;
+}
+
+/* ---------- Sections ---------- */
+.section {
+    padding: 3rem 0;
+}
+
+.section.alt {
+    background: var(--surface);
+    border-block: 1px solid var(--line);
+}
+
+.lead {
+    font-size: 1.2rem;
+    color: var(--muted);
+}
+
+/* ---------- Hero ---------- */
+.hero {
+    padding: 3.5rem 0 3rem;
+}
+
+.hero-grid {
+    display: grid;
+    gap: 2rem;
+    align-items: center;
+}
+
+.avatar {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: var(--accent);
+    color: #fff;
+    font-family: var(--font-head);
+    font-size: 2.6rem;
+    font-weight: 700;
+    border: 6px solid var(--highlight);
+    justify-self: start;
+}
+
+/* ---------- Buttons ---------- */
+.actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1.25rem;
+}
+
+.btn {
+    display: inline-block;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 0.7rem 1.4rem;
+    border-radius: var(--radius);
+    background: var(--accent);
+    color: #fff;
+    border: 2px solid var(--accent);
+    text-decoration: none;
+}
+
+.btn:hover {
+    background: var(--accent-dark);
+    border-color: var(--accent-dark);
+    color: #fff;
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--accent-dark);
+}
+
+/* ---------- Responsive grids (CSS Grid) ---------- */
+.grid {
+    display: grid;
+    gap: 1.25rem;
+    grid-template-columns: 1fr;
+}
+
+.card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+}
+
+.card p {
+    color: var(--muted);
+}
+
+.project {
+    display: flex;
+    flex-direction: column;
+}
+
+.project .actions {
+    margin-top: auto;
+    padding-top: 0.75rem;
+    gap: 1.25rem;
+}
+
+.project .actions a {
+    font-weight: 600;
+}
+
+.tags {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tags li {
+    background: var(--bg);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 0.15rem 0.8rem;
+    font-size: 0.9rem;
+}
+
+.timeline {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-left: 3px solid var(--highlight);
+}
+
+.timeline li {
+    padding: 0 0 1.25rem 1.25rem;
+}
+
+.timeline strong {
+    display: block;
+}
+
+/* ---------- Contact form ---------- */
+.field {
+    margin-bottom: 1.25rem;
+}
+
+label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.35rem;
+}
+
+input,
+textarea {
+    width: 100%;
+    font: inherit;
+    color: var(--ink);
+    padding: 0.7rem 0.85rem;
+    background: var(--surface);
+    border: 1px solid #9fb0bf;
+    border-radius: 8px;
+}
+
+input[aria-invalid="true"],
+textarea[aria-invalid="true"] {
+    border-color: #b3261e;
+}
+
+.error {
+    color: #b3261e;
+    font-size: 0.95rem;
+    margin: 0.3rem 0 0;
+    min-height: 1.2em;
+}
+
+#form-status {
+    margin-top: 1rem;
+    font-weight: 600;
+    color: var(--accent-dark);
+}
+
+.find-me {
+    margin-top: 2rem;
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+    border-top: 1px solid var(--line);
+    padding: 1.5rem 0;
+    color: var(--muted);
+    font-size: 0.95rem;
+}
+
+.site-footer .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0.5rem;
+}
+
+.site-footer p {
+    margin: 0;
+}
+
+/* ---------- Tablet and up ---------- */
+@media (min-width: 700px) {
+    .nav-toggle {
+        display: none;
+    }
+
+    #site-nav,
+    #site-nav.open {
+        display: flex;
+        flex-direction: row;
+        width: auto;
+    }
+
+    .grid-2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid-3 {
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    }
+
+    .hero-grid {
+        grid-template-columns: 1fr 220px;
+    }
+
+    .avatar {
+        width: 200px;
+        height: 200px;
+        justify-self: end;
+    }
+}

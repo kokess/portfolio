@@ -1,13 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>Austine Dominic Essien | Digital Marketer &amp; Frontend Developer</title>
+    <meta name="description"
+        content="Portfolio of Austine Dominic Essien, a digital marketing analyst and frontend web developer.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600&family=Sora:wght@600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="portfolio.css">
     <script src="portfolio.js" defer></script>
 </head>
-<body>
 
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+        <div class="container bar">
+            <a class="brand" href="index.html">Austine Dominic Essien</a>
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+            <nav id="site-nav" aria-label="Main">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="projects.html">Projects</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main">
+        <section class="hero">
+            <div class="container hero-grid">
+                <div>
+                    <h1>I build websites, and the campaigns that bring people to them.</h1>
+                    <p class="lead">I'm Austine Dominic Essien, a digital marketing analyst and frontend web developer.
+                        I combine data, content and clean code to grow brands online.</p>
+                    <div class="actions">
+                        <a class="btn" href="projects.html">View my projects</a>
+                        <a class="btn btn-outline" href="https://github.com/YOUR-GITHUB-USERNAME" target="_blank"
+                            rel="noopener">GitHub profile</a>
+                    </div>
+                </div>
+                <div class="avatar" role="img" aria-label="Initials ADE">ADE</div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <h2>What I do</h2>
+                <div class="grid grid-3">
+                    <article class="card">
+                        <h3>Marketing analysis</h3>
+                        <p>I track campaign performance in Google Analytics and turn the numbers into decisions.</p>
+                    </article>
+                    <article class="card">
+                        <h3>Frontend development</h3>
+                        <p>I build responsive, accessible pages with HTML, CSS and JavaScript.</p>
+                    </article>
+                    <article class="card">
+                        <h3>Content and SEO</h3>
+                        <p>I write content and optimise it so people and search engines can find it.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; <span id="year">2026</span> Austine Dominic Essien</p>
+            <p><a href="https://github.com/YOUR-GITHUB-USERNAME" target="_blank" rel="noopener">GitHub profile</a></p>
+        </div>
+    </footer>
 </body>
+
 </html>
